@@ -1,0 +1,216 @@
+{
+  "intents": [
+    {
+      "intent": "IOT",
+      "examples": [
+        {
+          "text": "متى لقاء مسار البرمجيات"
+        },
+        {
+          "text": "متى محاضرة مسار البرمجيات"
+        },
+        {
+          "text": "متى وقت مسار IOT"
+        }
+      ],
+      "description": "وقت محاضرة مسار IOT"
+    },
+    {
+      "intent": "التعريف",
+      "examples": [
+        {
+          "text": "ايش"
+        },
+        {
+          "text": "ايش فكرة الموقع"
+        },
+        {
+          "text": "ساعدني"
+        },
+        {
+          "text": "كيف"
+        },
+        {
+          "text": "كيف استخدم الموقع"
+        },
+        {
+          "text": "ماهذا"
+        },
+        {
+          "text": "وش"
+        },
+        {
+          "text": "وش هذا"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "اهلا"
+        },
+        {
+          "text": "مرحبا"
+        },
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "هلا"
+        },
+        {
+          "text": "هلو"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-date",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "ترحيب",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "اهلا وسهلا فيك , تفضل اسألني"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "node_10_1625782720940",
+      "previous_sibling": "node_5_1625783132586"
+    },
+    {
+      "type": "standard",
+      "title": "لقاء مسار البرمجيات",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "يشرفنا حضورك  يوم الاثنين من كل اسبوع الساعة 5 مساء"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#IOT",
+      "dialog_node": "node_2_1625783667096",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "هذه لوحة تحكم للربوت تساعدك في اختيار اتجاه الحركة والتحكم بها عن طريق الازرار الظاهرة امامك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#التعريف",
+      "dialog_node": "node_5_1625783132586",
+      "previous_sibling": "node_2_1625783667096"
+    },
+    {
+      "type": "standard",
+      "title": "أي شيء آخر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "لم أفهم، يمكنك محاولة اعادة الصياغة"
+              },
+              {
+                "text": "هل يمكنك اعادة صياغة عبارتك؟ أنا لا فهم"
+              },
+              {
+                "text": "لم أفهم قصدك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_10_1625782720940",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "مرحبا",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "اهلا وسهلاً, كيف حاب اساعدك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "الترحيب",
+  "language": "ar",
+  "description": ""
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Control </title>
+<link rel="stylesheet" type="text/css"  href="InterfaceStyle.css" >
+</head>
+
+<body>
+
+<div class="slidecontainer">
+
+<form id="form" action="indexphp.php" method="post" > 
+
+<h2> Motor 1 </h2>
+  <input type="range" min="0" max="180" value="0" class="slider" id="myRange1" name="m1">
+  <p>Value: <span id="demo1"></span></p>
+  
+  </br>
+  
+  <h2> Motor 2  </h2>
+  <input type="range" min="0" max="180" value="0" class="slider" id="myRange2" name="m2">
+  <p>Value: <span id="demo2"></span></p>
+  
+    </br>
+
+  <h2> Motor 3  </h2>
+  <input type="range" min="0" max="180" value="0" class="slider" id="myRange3" name="m3">
+  <p>Value: <span id="demo3"></span></p>
+  
+    </br>
+
+  <h2> Motor 4  </h2>
+  <input type="range" min="0" max="180" value="0" class="slider" id="myRange4" name="m4">
+  <p>Value: <span id="demo4"></span></p>
+  
+    </br>
+
+  <h2> Motor 5  </h2>
+  <input type="range" min="0" max="180" value="0" class="slider" id="myRange5" name="m5">
+  <p>Value: <span id="demo5"></span></p>
+  
+    </br>
+
+  <h2> Motor 6  </h2>
+  <input type="range" min="0" max="180" value="0" class="slider" id="myRange6" name="m6">
+  <p>Value: <span id="demo6"></span></p>
+  
+    </br>
+</br>
+
+<input type="submit" value="Save" onclick="functionl()" class="button" name="save"/>
+<input type="submit" value="ON"    class="button" name="on"/>
+<input type="submit" value="OFF"   class="button" name="off"/>
+
+</div> 
+
+
+<div class="slidecontainer">
+<input type="submit" value="Forward"   class="button" name="forward"/>
+<input type="submit" value="Backward"  class="button" name="backward"/>
+<input type="submit" value="STOP"      class="button" name="stop"/>
+<input type="submit" value="Left"      class="button" name="left"/>
+<input type="submit" value="Right"     class="button" name="right"/>
+</div>
+
+</form>
+
+</br> </br>
+</br> </br>
+
+<script src="Javascript.js"></script>
+
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "3dbf1342-61d4-4594-a567-c77ffb09d6f0", // The ID of this integration.
+      region: "eu-de", // The region your integration is hosted in.
+      serviceInstanceID: "50dae33d-e174-49cf-880f-cfa991c10f8d", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+</body>
+</html>
